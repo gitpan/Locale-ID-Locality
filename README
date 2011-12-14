@@ -1,0 +1,165 @@
+NAME
+    Locale::ID::Locality - List of localities (cities/regencies) in
+    Indonesia
+
+VERSION
+    version 0.01
+
+SYNOPSIS
+     use Locale::ID::Locality qw(list_id_localities);
+     my $res = list_id_localities(detail=>1);
+
+DESCRIPTION
+    This module provides API access for list of localities
+    (cities/regencies) in Indonesia. Data is currently retrieved from the
+    gudang-data-interim repository at
+    https://github.com/sharyanto/gudang-data-interim/tree/master/data/ind_lo
+    cality/
+
+    This module's functions have Sub::Spec specs.
+
+FUNCTIONS
+    None are exported by default, but they are exportable.
+
+  list_id_localities(%args) -> [STATUS_CODE, ERR_MSG, RESULT]
+    Returns a 3-element arrayref. STATUS_CODE is 200 on success, or an error
+    code between 3xx-5xx (just like in HTTP). ERR_MSG is a string containing
+    error message, RESULT is the actual result.
+
+    Field selection arguments ("*" denotes required arguments):
+
+    *   detail => *bool* (default 0)
+
+        Return detailed data (all fields).
+
+    *   fields => *array* (default "ind_name")
+
+        Select fields to return.
+
+    *   show_field_names => *bool*
+
+        Show field names in result (as hash/assoc).
+
+        When off, will return an array of values without field names
+        (array/list). When on, will return an array of field names and
+        values (hash/associative array).
+
+    Filter arguments:
+
+    *   q => *str*
+
+        Search.
+
+    Filter for bps_code arguments:
+
+    *   bps_code => *int*
+
+        Only return results having certain value of bps_code.
+
+    *   max_bps_code => *int*
+
+        Only return results having a certain maximum value of bps_code.
+
+    *   min_bps_code => *int*
+
+        Only return results having a certain minimum value of bps_code.
+
+    Filter for bps_prov_code arguments:
+
+    *   bps_prov_code => *int*
+
+        Only return results having certain value of bps_prov_code.
+
+    *   max_bps_prov_code => *int*
+
+        Only return results having a certain maximum value of bps_prov_code.
+
+    *   min_bps_prov_code => *int*
+
+        Only return results having a certain minimum value of bps_prov_code.
+
+    Filter for ind_name arguments:
+
+    *   ind_name => *str*
+
+        Only return results having certain value of ind_name.
+
+    *   ind_name_contain => *str*
+
+        Only return results with ind_name containing certain text.
+
+    *   ind_name_match => *str*
+
+        Only return results with ind_name matching specified regex.
+
+    *   ind_name_not_contain => *str*
+
+        Only return results with ind_name not containing certain text.
+
+    *   ind_name_not_match => *str*
+
+        Only return results with ind_name matching specified regex.
+
+    *   max_ind_name => *str*
+
+        Only return results having a certain maximum value of ind_name.
+
+    *   min_ind_name => *str*
+
+        Only return results having a certain minimum value of ind_name.
+
+    Filter for type arguments:
+
+    *   max_type => *int*
+
+        Only return results having a certain maximum value of type.
+
+    *   min_type => *int*
+
+        Only return results having a certain minimum value of type.
+
+    *   type => *int*
+
+        Only return results having certain value of type.
+
+    Order arguments:
+
+    *   random => *bool* (default 0)
+
+        If on, return result in random order.
+
+    *   sort => *str*
+
+        Order data according to certain fields.
+
+        A list of field names separated by comma. Each field can be prefixed
+        with '-' to specify descending order instead of the default
+        ascending.
+
+    Paging arguments:
+
+    *   result_limit => *int*
+
+        Only return a certain number of results.
+
+    *   result_start => *int* (default 1)
+
+        Only return results from a certain position.
+
+SEE ALSO
+    list-id-localities
+
+    Gudang Data Interim project,
+    https://github.com/sharyanto/gudang-data-interim/
+
+    This API will also be available on GudangAPI, http://gudangapi.com/
+
+AUTHOR
+    Steven Haryanto <stevenharyanto@gmail.com>
+
+COPYRIGHT AND LICENSE
+    This software is copyright (c) 2011 by Steven Haryanto.
+
+    This is free software; you can redistribute it and/or modify it under
+    the same terms as the Perl 5 programming language system itself.
+

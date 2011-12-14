@@ -1,0 +1,59 @@
+#!/usr/bin/perl
+
+# workaround for dzil
+package list_id_provinces;
+
+use 5.010;
+use strict;
+use warnings;
+
+use Sub::Spec::CmdLine qw(run);
+
+our $VERSION = '0.01'; # VERSION
+
+run(module => 'Locale::ID::Locality', sub=>'list_id_localities');
+
+1;
+# ABSTRACT: List Indonesian localities (cities/regencies)
+
+
+__END__
+=pod
+
+=head1 NAME
+
+list_id_provinces - List Indonesian localities (cities/regencies)
+
+=head1 VERSION
+
+version 0.01
+
+=head1 SYNOPSIS
+
+ # List all Indonesian cities (not regencies)
+ $ list-id-localities --type 1 --detail
+
+ # List all Indonesian regencies (not cities)
+ $ list-id-localities --type 2 --detail
+
+ # Show available options
+ $ list-id-localities --help
+
+=head1 DESCRIPTION
+
+This is a command-line interface for the <list_id_localities> function in
+L<Locale::ID::Locality>.
+
+=head1 AUTHOR
+
+Steven Haryanto <stevenharyanto@gmail.com>
+
+=head1 COPYRIGHT AND LICENSE
+
+This software is copyright (c) 2011 by Steven Haryanto.
+
+This is free software; you can redistribute it and/or modify it under
+the same terms as the Perl 5 programming language system itself.
+
+=cut
+
