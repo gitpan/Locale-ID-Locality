@@ -1,9 +1,8 @@
 NAME
-    Locale::ID::Locality - List of localities (cities/regencies) in
-    Indonesia
+    Locale::ID::Locality
 
 VERSION
-    version 0.01
+    version 0.02
 
 SYNOPSIS
      use Locale::ID::Locality qw(list_id_localities);
@@ -21,131 +20,6 @@ DESCRIPTION
 FUNCTIONS
     None are exported by default, but they are exportable.
 
-  list_id_localities(%args) -> [STATUS_CODE, ERR_MSG, RESULT]
-    Returns a 3-element arrayref. STATUS_CODE is 200 on success, or an error
-    code between 3xx-5xx (just like in HTTP). ERR_MSG is a string containing
-    error message, RESULT is the actual result.
-
-    Field selection arguments ("*" denotes required arguments):
-
-    *   detail => *bool* (default 0)
-
-        Return detailed data (all fields).
-
-    *   fields => *array* (default "ind_name")
-
-        Select fields to return.
-
-    *   show_field_names => *bool*
-
-        Show field names in result (as hash/assoc).
-
-        When off, will return an array of values without field names
-        (array/list). When on, will return an array of field names and
-        values (hash/associative array).
-
-    Filter arguments:
-
-    *   q => *str*
-
-        Search.
-
-    Filter for bps_code arguments:
-
-    *   bps_code => *int*
-
-        Only return results having certain value of bps_code.
-
-    *   max_bps_code => *int*
-
-        Only return results having a certain maximum value of bps_code.
-
-    *   min_bps_code => *int*
-
-        Only return results having a certain minimum value of bps_code.
-
-    Filter for bps_prov_code arguments:
-
-    *   bps_prov_code => *int*
-
-        Only return results having certain value of bps_prov_code.
-
-    *   max_bps_prov_code => *int*
-
-        Only return results having a certain maximum value of bps_prov_code.
-
-    *   min_bps_prov_code => *int*
-
-        Only return results having a certain minimum value of bps_prov_code.
-
-    Filter for ind_name arguments:
-
-    *   ind_name => *str*
-
-        Only return results having certain value of ind_name.
-
-    *   ind_name_contain => *str*
-
-        Only return results with ind_name containing certain text.
-
-    *   ind_name_match => *str*
-
-        Only return results with ind_name matching specified regex.
-
-    *   ind_name_not_contain => *str*
-
-        Only return results with ind_name not containing certain text.
-
-    *   ind_name_not_match => *str*
-
-        Only return results with ind_name matching specified regex.
-
-    *   max_ind_name => *str*
-
-        Only return results having a certain maximum value of ind_name.
-
-    *   min_ind_name => *str*
-
-        Only return results having a certain minimum value of ind_name.
-
-    Filter for type arguments:
-
-    *   max_type => *int*
-
-        Only return results having a certain maximum value of type.
-
-    *   min_type => *int*
-
-        Only return results having a certain minimum value of type.
-
-    *   type => *int*
-
-        Only return results having certain value of type.
-
-    Order arguments:
-
-    *   random => *bool* (default 0)
-
-        If on, return result in random order.
-
-    *   sort => *str*
-
-        Order data according to certain fields.
-
-        A list of field names separated by comma. Each field can be prefixed
-        with '-' to specify descending order instead of the default
-        ascending.
-
-    Paging arguments:
-
-    *   result_limit => *int*
-
-        Only return a certain number of results.
-
-    *   result_start => *int* (default 1)
-
-        Only return results from a certain position.
-
 SEE ALSO
     list-id-localities
 
@@ -154,11 +28,196 @@ SEE ALSO
 
     This API will also be available on GudangAPI, http://gudangapi.com/
 
+FUNCTIONS
+  list_id_localities(%args) -> [status, msg, result, meta]
+    REPLACE ME.
+
+    Arguments ('*' denotes required arguments):
+
+    *   bps_code* => *int*
+
+        Only return records where the 'bps_code' field equals specified
+        value.
+
+    *   bps_code.is* => *int*
+
+        Only return records where the 'bps_code' field equals specified
+        value.
+
+    *   bps_code.max => *int*
+
+        Only return records where the 'bps_code' field is less than or equal
+        to specified value.
+
+    *   bps_code.min => *array*
+
+        Only return records where the 'bps_code' field is greater than or
+        equal to specified value.
+
+    *   bps_code.xmax => *int*
+
+        Only return records where the 'bps_code' field is less than
+        specified value.
+
+    *   bps_code.xmin => *array*
+
+        Only return records where the 'bps_code' field is greater than
+        specified value.
+
+    *   bps_prov_code* => *int*
+
+        Only return records where the 'bps_prov_code' field equals specified
+        value.
+
+    *   bps_prov_code.is* => *int*
+
+        Only return records where the 'bps_prov_code' field equals specified
+        value.
+
+    *   bps_prov_code.max => *int*
+
+        Only return records where the 'bps_prov_code' field is less than or
+        equal to specified value.
+
+    *   bps_prov_code.min => *array*
+
+        Only return records where the 'bps_prov_code' field is greater than
+        or equal to specified value.
+
+    *   bps_prov_code.xmax => *int*
+
+        Only return records where the 'bps_prov_code' field is less than
+        specified value.
+
+    *   bps_prov_code.xmin => *array*
+
+        Only return records where the 'bps_prov_code' field is greater than
+        specified value.
+
+    *   detail => *bool* (default: 0)
+
+        Return array of full records instead of just ID fields.
+
+        By default, only the key (ID) field is returned per result entry.
+
+    *   fields* => *array* (default: "ind_name")
+
+        Select fields to return.
+
+    *   ind_name* => *str*
+
+        Only return records where the 'ind_name' field equals specified
+        value.
+
+    *   ind_name.contains => *str*
+
+        Only return records where the 'ind_name' field contains specified
+        text.
+
+    *   ind_name.is* => *str*
+
+        Only return records where the 'ind_name' field equals specified
+        value.
+
+    *   ind_name.max => *str*
+
+        Only return records where the 'ind_name' field is less than or equal
+        to specified value.
+
+    *   ind_name.min => *array*
+
+        Only return records where the 'ind_name' field is greater than or
+        equal to specified value.
+
+    *   ind_name.not_contains => *str*
+
+        Only return records where the 'ind_name' field does not contain a
+        certain text.
+
+    *   ind_name.xmax => *str*
+
+        Only return records where the 'ind_name' field is less than
+        specified value.
+
+    *   ind_name.xmin => *array*
+
+        Only return records where the 'ind_name' field is greater than
+        specified value.
+
+    *   q => *str*
+
+        Search.
+
+    *   random => *bool* (default: 0)
+
+        Return records in random order.
+
+    *   result_limit => *int*
+
+        Only return a certain number of records.
+
+    *   result_start => *int* (default: 1)
+
+        Only return starting from the n'th record.
+
+    *   sort => *str*
+
+        Order records according to certain field(s).
+
+        A list of field names separated by comma. Each field can be prefixed
+        with '-' to specify descending order instead of the default
+        ascending.
+
+    *   type* => *int*
+
+        Only return records where the 'type' field equals specified value.
+
+    *   type.is* => *int*
+
+        Only return records where the 'type' field equals specified value.
+
+    *   type.max => *int*
+
+        Only return records where the 'type' field is less than or equal to
+        specified value.
+
+    *   type.min => *array*
+
+        Only return records where the 'type' field is greater than or equal
+        to specified value.
+
+    *   type.xmax => *int*
+
+        Only return records where the 'type' field is less than specified
+        value.
+
+    *   type.xmin => *array*
+
+        Only return records where the 'type' field is greater than specified
+        value.
+
+    *   with_field_names => *bool*
+
+        Return field names in each record (as hash/associative array).
+
+        When enabled, function will return each record as hash/associative
+        array (field name => value pairs). Otherwise, function will return
+        each record as list/array (field value, field value, ...).
+
+    Return value:
+
+    Returns an enveloped result (an array). First element (status) is an
+    integer containing HTTP status code (200 means OK, 4xx caller error, 5xx
+    function error). Second element (msg) is a string containing error
+    message, or 'OK' if status is 200. Third element (result) is optional,
+    the actual result. Fourth element (meta) is called result metadata and
+    is optional, a hash that contains extra information.
+
 AUTHOR
     Steven Haryanto <stevenharyanto@gmail.com>
 
 COPYRIGHT AND LICENSE
-    This software is copyright (c) 2011 by Steven Haryanto.
+    This software is copyright (c) 2012 by Steven Haryanto.
 
     This is free software; you can redistribute it and/or modify it under
     the same terms as the Perl 5 programming language system itself.
