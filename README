@@ -1,8 +1,9 @@
 NAME
-    Locale::ID::Locality
+    Locale::ID::Locality - List of localities (cities/regencies) in
+    Indonesia
 
 VERSION
-    version 0.02
+    version 0.03
 
 SYNOPSIS
      use Locale::ID::Locality qw(list_id_localities);
