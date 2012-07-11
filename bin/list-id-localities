@@ -1,20 +1,18 @@
 #!/usr/bin/perl
 
-# workaround for dzil
-package list_id_provinces;
-
 use 5.010;
 use strict;
 use warnings;
 
 use Perinci::CmdLine;
 
-our $VERSION = '0.03'; # VERSION
+our $VERSION = '0.04'; # VERSION
 
 Perinci::CmdLine->new(url=>'/Locale/ID/Locality/list_id_localities')->run;
 
 1;
 # ABSTRACT: List Indonesian localities (cities/regencies)
+# PODNAME: list-id-localities
 
 
 __END__
@@ -22,11 +20,11 @@ __END__
 
 =head1 NAME
 
-list_id_provinces - List Indonesian localities (cities/regencies)
+list-id-localities - List Indonesian localities (cities/regencies)
 
 =head1 VERSION
 
-version 0.03
+version 0.04
 
 =head1 SYNOPSIS
 

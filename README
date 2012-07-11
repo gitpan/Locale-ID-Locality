@@ -1,9 +1,8 @@
 NAME
-    Locale::ID::Locality - List of localities (cities/regencies) in
-    Indonesia
+    Locale::ID::Locality
 
 VERSION
-    version 0.03
+    version 0.04
 
 SYNOPSIS
      use Locale::ID::Locality qw(list_id_localities);
@@ -16,7 +15,7 @@ DESCRIPTION
     https://github.com/sharyanto/gudang-data-interim/tree/master/data/ind_lo
     cality/
 
-    This module's functions have Sub::Spec specs.
+    This module's functions have Rinci specs.
 
 FUNCTIONS
     None are exported by default, but they are exportable.
@@ -29,9 +28,16 @@ SEE ALSO
 
     This API will also be available on GudangAPI, http://gudangapi.com/
 
+DESCRIPTION
+    This module has Rinci metadata.
+
 FUNCTIONS
+    None are exported by default, but they are exportable.
+
   list_id_localities(%args) -> [status, msg, result, meta]
-    REPLACE ME.
+    Localities (cities & regencies) in Indonesia.
+
+    REPLACE ME
 
     Arguments ('*' denotes required arguments):
 

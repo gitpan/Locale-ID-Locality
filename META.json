@@ -4,7 +4,7 @@
       "Steven Haryanto <stevenharyanto@gmail.com>"
    ],
    "dynamic_config" : 0,
-   "generated_by" : "Dist::Zilla version 4.300015, CPAN::Meta::Converter version 2.120921",
+   "generated_by" : "Dist::Zilla version 4.300006, CPAN::Meta::Converter version 2.113640",
    "license" : [
       "perl_5"
    ],
@@ -26,8 +26,8 @@
       },
       "runtime" : {
          "requires" : {
-            "Perinci::CmdLine" : "0",
-            "Perinci::Sub::Gen::AccessTable" : "0.11",
+            "Perinci::CmdLine" : 0,
+            "Perinci::Sub::Gen::AccessTable" : "0.14",
             "perl" : "5.010000"
          }
       },
@@ -44,6 +44,6 @@
          "url" : "http://github.com/sharyanto/perl-Locale-ID-Locality"
       }
    },
-   "version" : "0.03"
+   "version" : "0.04"
 }
 
