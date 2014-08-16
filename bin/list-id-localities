@@ -1,17 +1,22 @@
 #!perl
 
-use 5.010;
+# Note: This script is a CLI interface to Riap function /Locale/ID/Locality/list_id_localities
+# and generated automatically using Dist::Zilla::Plugin::Rinci::ScriptFromFunc version 0.01
+
+our $DATE = '2014-08-16'; # DATE
+our $VERSION = '0.06'; # VERSION
+
+use 5.010001;
 use strict;
 use warnings;
 
 use Perinci::CmdLine::Any;
 
-our $VERSION = '0.05'; # VERSION
+Perinci::CmdLine::Any->new(
+    url => "/Locale/ID/Locality/list_id_localities",
+)->run;
 
-Perinci::CmdLine::Any->new(url=>'/Locale/ID/Locality/list_id_localities')->run;
-
-1;
-# ABSTRACT: List Indonesian localities (cities/regencies)
+# ABSTRACT: Localities (cities & regencies) in Indonesia
 # PODNAME: list-id-localities
 
 __END__
@@ -22,27 +27,33 @@ __END__
 
 =head1 NAME
 
-list-id-localities - List Indonesian localities (cities/regencies)
+list-id-localities - Localities (cities & regencies) in Indonesia
 
 =head1 VERSION
 
-This document describes version 0.05 of list-id-localities (from Perl distribution Locale-ID-Locality), released on 2014-07-22.
+This document describes version 0.06 of list-id-localities (from Perl distribution Locale-ID-Locality), released on 2014-08-16.
 
 =head1 SYNOPSIS
 
- # List all Indonesian cities (not regencies)
- $ list-id-localities --type 1 --detail
+Usage:
 
- # List all Indonesian regencies (not cities)
- $ list-id-localities --type 2 --detail
+ % list-id-localities
 
- # Show available options
- $ list-id-localities --help
+Examples:
+
+ TODO
+
+To see all options:
+
+ % list-id-localities --help
 
 =head1 DESCRIPTION
 
-This is a command-line interface for the <list_id_localities> function in
-L<Locale::ID::Locality>.
+REPLACE ME
+
+=head1 OPTIONS
+
+ TODO
 
 =head1 HOMEPAGE
 

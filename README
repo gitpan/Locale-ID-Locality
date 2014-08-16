@@ -3,8 +3,8 @@ NAME
     Indonesia
 
 VERSION
-    This document describes version 0.05 of Locale::ID::Locality (from Perl
-    distribution Locale-ID-Locality), released on 2014-07-22.
+    This document describes version 0.06 of Locale::ID::Locality (from Perl
+    distribution Locale-ID-Locality), released on 2014-08-16.
 
 SYNOPSIS
      use Locale::ID::Locality qw(list_id_localities);
